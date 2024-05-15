@@ -15,7 +15,10 @@ import { WalletHandler } from './apis/walletHandler';
     //deleteWalletTransactionTable();
 
 
-/* Test run for creating a wallet and inserting an idempotent transaction */
+/* 
+Test run for creating a wallet and inserting an idempotent transaction 
+please comment and uncomment respective funcs respectively
+*/
 
 // create a new wallet
 const wallet_handler = new WalletHandler();
@@ -26,8 +29,9 @@ const new_wallet: Wallet = {
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString()
 }
+//wallet_handler.createWallet(new_wallet);
 // check balance
-wallet_handler.getWalletBalance('1');
+//wallet_handler.getWalletBalance('1');
 
 // insert wallet transaction and update balance atomically
 const wallet_transaction: WalletTransaction = {
@@ -43,6 +47,6 @@ const wallet_transaction: WalletTransaction = {
 
 wallet_handler.makeTransaction(wallet_transaction);
 // check balance after transaction
-wallet_handler.getWalletBalance('1');
+//wallet_handler.getWalletBalance('1');
 
 

@@ -27,7 +27,7 @@ export class WalletHandler {
 
     try {
       const result = await this.documentClient.get(params).promise();
-      console.log("Result ", result);
+      console.log("Debug Log Result ", result);
       console.log("Current Balance : ", result.Item?.balance);
       return result.Item as Wallet | null;
     } catch (error) {
